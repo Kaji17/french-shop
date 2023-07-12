@@ -17,7 +17,7 @@ public class DataControllers {
 		this.dataServiceDao = dataServiceDao;
 	}
 
-	@PostMapping("/french-shop/api/v1")
+	@PostMapping("/french-shop/api/v1/article")
 	public Article getData(@RequestBody LinkBody linkBody) {
 		Article article = new Article();
 		article = dataServiceDao.getDataByLink(linkBody);
