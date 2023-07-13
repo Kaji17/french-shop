@@ -102,7 +102,7 @@ public class DataServicesDao implements IDataServicesDao {
 				.getText();
 		price1 = driver.findElement(
 				By.xpath("//*[@id=\"goods-detail-v3\"]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[2]/div/div/span"));
-		price = Double.parseDouble(removefirstChar(price1.getAttribute("innerHTML"), 1).replace(",", "."));
+				price = Double.parseDouble(removefirstChar(price1.getAttribute("innerHTML"), 1).replace(",", "."));
 		imagePath = driver.findElement(By.xpath(
 				"//*[@id=\"goods-detail-v3\"]/div/div[1]/div/div[2]/div[1]/div[1]/div[2]/div[1]/div[1]/div[2]/img"));
 		image = imagePath.getAttribute("src");
