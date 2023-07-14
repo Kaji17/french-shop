@@ -1,5 +1,6 @@
 package com.pevir.frenchshop.controllers;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,6 +9,7 @@ import com.pevir.frenchshop.dao.DataServicesDao;
 import com.pevir.frenchshop.models.Article;
 import com.pevir.frenchshop.models.LinkBody;
 
+@CrossOrigin(origins= "*")
 @RestController
 public class DataControllers {
 

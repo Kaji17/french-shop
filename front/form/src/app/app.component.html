@@ -1,0 +1,45 @@
+<div
+  class="mx-auto text-center flex justify-center h-[100vh] items-center w-[auto] pevir"
+  style="flex-direction: column;"
+>
+  <h1 class="text-center text-[50px]">Welcome Back</h1>
+  <form [formGroup]="addProduct" class="flex items-start w-[auto]" style="flex-direction: column;">
+    <div class="flex py-4">
+      <input type="text" pInputText formControlName="link" placeholder="Collez le lien"/>
+    <p-dropdown
+      [options]="websites"
+      optionLabel="name"
+      formControlName="siteName"
+      [style]="{marginLeft: '5px'}"
+    ></p-dropdown>
+    </div>
+
+    <button
+      pButton
+      pRipple
+      label="Submit"
+      class="p-button-success w-[100%]"
+      style="width:100%; margin-top: 10px;"
+      (click)="handleOk()"    ></button>
+  </form>
+
+<section>
+  <p-dataView #dv [value]="products">
+    <ng-template let-product pTemplate="listItem">
+        <div class="col-12" style="width: 400px;">
+            <div class="flex flex-column xl:flex-row xl:align-items-start p-4 gap-4" style="display: flex; justify-content: space-between;">
+                <img class="w-9 sm:w-16rem xl:w-10rem shadow-2 block xl:block mx-auto border-round imageJ" [src]="product.image" [alt]="product.name" />
+                <div class="flex flex-column sm:flex-row justify-content-between align-items-center xl:align-items-start flex-1 gap-4">
+                    <div class="flex flex-column align-items-center sm:align-items-start gap-3">
+                        <div class="text-2xl font-bold text-900">{{ product.name }}</div>
+                    </div>
+                    <div class="flex sm:flex-column align-items-center sm:align-items-end gap-3 sm:gap-2">
+                        <span class="text-2xl font-semibold">{{'FCFA'+ product.price*700 }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</p-dataView>
+</section>
+</div>
